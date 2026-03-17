@@ -4,7 +4,13 @@
  * This is the simplest possible example of streaming checkpoints from Sui.
  * No wrapper class, no abstractions — just raw gRPC.
  *
- * Run: npx ts-node demo/stream.ts
+ * Setup:
+ *   1. npm install @grpc/grpc-js @grpc/proto-loader
+ *   2. Get proto files: git clone https://github.com/MystenLabs/sui-apis.git --depth=1
+ *      mkdir -p protos && cp -r sui-apis/proto/* protos/ && rm -rf sui-apis
+ *   3. Run: npx ts-node stream.ts
+ *
+ * Run: npx ts-node stream.ts
  */
 
 import * as grpc from '@grpc/grpc-js';
@@ -16,14 +22,14 @@ import * as path from 'path';
 // ========================================
 // Proto files are the "menu" — they tell the client what methods exist
 const packageDefinition = protoLoader.loadSync(
-  path.join(__dirname, '../protos/sui/rpc/v2/subscription_service.proto'),
+  path.join(__dirname, 'protos/sui/rpc/v2/subscription_service.proto'),
   {
     keepCase: true,
     longs: String,
     enums: String,
     defaults: true,
     oneofs: true,
-    includeDirs: [path.join(__dirname, '../protos')],
+    includeDirs: [path.join(__dirname, 'protos')],
   }
 );
 
