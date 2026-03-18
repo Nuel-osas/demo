@@ -2,6 +2,7 @@
   "name": "sui-grpc-streaming-demo",
   "version": "1.0.0",
   "description": "Minimal Sui gRPC streaming demo",
+  "type": "commonjs",
   "scripts": {
     "setup:protos": "node setup.js",
     "stream": "npx ts-node demo/stream.ts"

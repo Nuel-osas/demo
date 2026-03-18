@@ -22,14 +22,14 @@ import * as path from 'path';
 // ========================================
 // Proto files are the "menu" — they tell the client what methods exist
 const packageDefinition = protoLoader.loadSync(
-  path.join(__dirname, 'protos/sui/rpc/v2/subscription_service.proto'),
+  path.join(__dirname, '../protos/sui/rpc/v2/subscription_service.proto'),
   {
     keepCase: true,
     longs: String,
     enums: String,
     defaults: true,
     oneofs: true,
-    includeDirs: [path.join(__dirname, 'protos')],
+    includeDirs: [path.join(__dirname, '../protos')],
   }
 );
 
