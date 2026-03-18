@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Minimal Sui gRPC streaming demo",
   "scripts": {
-    "setup:protos": "git clone https://github.com/MystenLabs/sui-apis.git --depth=1 && mkdir -p protos && cp -r sui-apis/proto/* protos/ && rm -rf sui-apis",
+    "setup:protos": "node setup.js",
     "stream": "npx ts-node demo/stream.ts"
   },
   "dependencies": {
