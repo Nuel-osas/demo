@@ -1,0 +1,18 @@
+{
+  "name": "sui-grpc-streaming-demo",
+  "version": "1.0.0",
+  "description": "Minimal Sui gRPC streaming demo",
+  "scripts": {
+    "setup:protos": "git clone https://github.com/MystenLabs/sui-apis.git --depth=1 && mkdir -p protos && cp -r sui-apis/proto/* protos/ && rm -rf sui-apis",
+    "stream": "npx ts-node demo/stream.ts"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.0",
+    "@grpc/proto-loader": "^0.7.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}
